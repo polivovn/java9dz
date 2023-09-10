@@ -7,47 +7,37 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class RadioTest {
     @Test
-    public void testNext() {
+    public void testNextStation() {
         Radio radio = new Radio();
-        radio.next();
-        int expected = 1;
-        int actual = radio.currentStation;
-        Assertions.assertEquals(expected, actual);
+        radio.nextStation();
+        assertEquals(1, radio.getCurrentStation());
     }
 
     @Test
-    public void testPrev() {
+    public void testPrevStation() {
         Radio radio = new Radio();
-        radio.prev();
-        int expected = 9;
-        int actual = radio.currentStation;
-        Assertions.assertEquals(expected, actual);
+        radio.prevStation();
+        assertEquals(9, radio.getCurrentStation());
     }
 
     @Test
     public void testSetStation() {
         Radio radio = new Radio();
         radio.setStation(5);
-        int expected = 5;
-        int actual = radio.currentStation;
-        Assertions.assertEquals(expected, actual);
+        assertEquals(5, radio.getCurrentStation());
     }
 
     @Test
     public void testIncreaseVolume() {
         Radio radio = new Radio();
         radio.increaseVolume();
-        int expected = 0;
-        int actual = radio.volume;
-        Assertions.assertEquals(expected, actual);
+        assertEquals(1, radio.getVolume());
     }
 
     @Test
     public void testDecreaseVolume() {
         Radio radio = new Radio();
         radio.decreaseVolume();
-        int expected = 0;
-        int actual = radio.volume;
-        Assertions.assertEquals(expected, actual);
+        assertEquals(0, radio.getVolume());
     }
 }
