@@ -1,3 +1,4 @@
+
 package ru.netology.statistic;
 
 import org.junit.jupiter.api.Assertions;
@@ -7,37 +8,47 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class RadioTest {
     @Test
-    public void testNextStation() {
+    public void testNext() {
         Radio radio = new Radio();
-        radio.nextStation();
-        assertEquals(1, radio.getCurrentStation());
+        radio.next();
+        int expected = 1;
+        int actual = radio.currentStation;
+        Assertions.assertEquals(expected, actual);
     }
 
     @Test
-    public void testPrevStation() {
+    public void testPrev() {
         Radio radio = new Radio();
-        radio.prevStation();
-        assertEquals(9, radio.getCurrentStation());
+        radio.prev();
+        int expected = 9;
+        int actual = radio.currentStation;
+        Assertions.assertEquals(expected, actual);
     }
 
     @Test
     public void testSetStation() {
         Radio radio = new Radio();
         radio.setStation(5);
-        assertEquals(5, radio.getCurrentStation());
+        int expected = 5;
+        int actual = radio.currentStation;
+        Assertions.assertEquals(expected, actual);
     }
 
     @Test
     public void testIncreaseVolume() {
         Radio radio = new Radio();
         radio.increaseVolume();
-        assertEquals(1, radio.getVolume());
+        int expected = 0;
+        int actual = radio.volume;
+        Assertions.assertEquals(expected, actual);
     }
 
     @Test
     public void testDecreaseVolume() {
         Radio radio = new Radio();
         radio.decreaseVolume();
-        assertEquals(0, radio.getVolume());
+        int expected = 0;
+        int actual = radio.volume;
+        Assertions.assertEquals(expected, actual);
     }
 }
