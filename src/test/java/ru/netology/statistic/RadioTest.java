@@ -51,4 +51,13 @@ public class RadioTest {
         int actual = radio.getVolume();
         Assertions.assertEquals(expected, actual);
     }
+
+    @Test
+    public void testSetCurrentStationLess() {
+        Radio radio = new Radio();
+        radio.setCurrentStation(-1);
+        int expected = 0;
+        int actual = radio.getCurrentStation;
+        assertEquals(expected, actual);
+    }
 }
